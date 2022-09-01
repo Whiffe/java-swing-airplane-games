@@ -22,6 +22,13 @@ public class Enemy1 extends Enemy{
 
         this.image = Toolkit.getDefaultToolkit().getImage("src/images/enemy1.png");
 
+
+        this.items=new Item[] {
+                new Item001(myPanel),
+                new Item001(myPanel),
+                new Item001(myPanel)
+        };
+
     }
 
     //敌机爆炸效果，放在放到数组中

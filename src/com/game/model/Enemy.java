@@ -24,6 +24,9 @@ public class Enemy {
 
     public int hp; //敌机的生命值
 
+    public Item[] items;
+
+
     public Enemy(MyPanel myPanel) {
         this.myPanel = myPanel;
     }
@@ -34,6 +37,21 @@ public class Enemy {
 
     //移除死掉或者飞出界面的敌机
     public void killed() {
+        if(items!=null && items.length>0) {
+            //敌机死后，释放奖品
+            for(int i=0;i<items.length;i++) {
+                Item item=items[i];
+
+                //奖品出现的位置就是敌机死掉的位置
+                //25*i目的是将奖品隔开
+                item.x=this.x+25*i;
+                item.y=this.y;
+
+                this.myPanel.items.add(item);
+
+            }
+        }
+
         this.myPanel.enemys.remove(this);
     }
 

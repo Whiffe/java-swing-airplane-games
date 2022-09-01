@@ -1,7 +1,5 @@
 package com.game.view;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
@@ -10,6 +8,7 @@ import javax.swing.JPanel;
 import com.game.model.Bullet;
 import com.game.model.Enemy;
 import com.game.model.Player;
+import com.game.model.Item;
 import com.game.thread.DrawableTherad;
 
 public class MyPanel extends JPanel{
@@ -46,6 +45,8 @@ public class MyPanel extends JPanel{
 
 
     }
+    //存放所有的奖品
+    public ArrayList<Item> items = new ArrayList<Item>();
 
     public void paintComponent(Graphics g)
     {
@@ -108,7 +109,14 @@ public class MyPanel extends JPanel{
         for(int i=0;i<this.enemys.size();i++) {
             this.enemys.get(i).drawSelf(g);
         }
+        //将所有的奖品画出来
+        for(int i=0;i<this.items.size();i++) {
+            this.items.get(i).drawSelf(g);
+        }
 
+        //画出分数
+        g.setColor(Color.red);
+        g.drawString(this.player.count+"",BaseFrame.frameWidth-100,15);
     }
 }
 

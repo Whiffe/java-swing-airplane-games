@@ -20,6 +20,8 @@ public class Player {
     public int x;
     public int y;
 
+    public int count=0; //存放玩家的分数
+
     //将所有的主角飞机 图片对象放到数组中
     public Image[] images = new Image[] {
             Toolkit.getDefaultToolkit().getImage("src/images/me1.png"),
@@ -45,6 +47,15 @@ public class Player {
             if(this.imageIndex==this.images.length) {
                 this.imageIndex = 0;
             }
+        }
+
+        //判断主角飞机有没有吃到奖品
+        for(int i=0;i<this.myPanel.items.size();i++)
+        {
+            Item item=this.myPanel.items.get(i);
+
+            if((this.x>=item.x-this.width && this.x<=item.x+item.width) && (this.y>=item.y-this.height && this.y<=item.y+item.height))
+                item.eated();
         }
     }
 
