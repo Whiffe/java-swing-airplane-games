@@ -1,5 +1,6 @@
 package com.game.model;
 
+import com.game.thread.MusicThread;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
