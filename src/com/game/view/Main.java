@@ -1,4 +1,5 @@
 package com.game.view;
+import com.game.thread.MusicThread;
 
 public class Main {
     public static void main(String[] args) {
