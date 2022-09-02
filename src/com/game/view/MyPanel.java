@@ -79,6 +79,7 @@ public class MyPanel extends JPanel{
 
             //存入arrayList中
             this.bullets.add(bullet);
+            //new MusicThread("src/video/bullet.wav").start();
         }
 
         //画出所有的子弹
