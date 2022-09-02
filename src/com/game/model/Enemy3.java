@@ -53,6 +53,7 @@ public class Enemy3 extends Enemy{
                 if(imageIndex>=this.dieImages.length) {
                     //敌机死了
                     killed();
+                    new MusicThread("src/video/boom.wav").start();
                 }
 
             }
